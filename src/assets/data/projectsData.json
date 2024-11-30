@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "name": "Online Voting D-App",
+    "description": "Decentralised online voting platform to hold secure elections.",
+    "techStack": ["Next.js", "Ethereum", "Solidity", "Hardhat"],
+    "keyFeatures": [
+      "Voters are authenticated using their unique addresses and are given permission to vote",
+      "Fully responsive design that adapts to all screen sizes and devices.",
+      "Sensitive data like images are stored using IPFS, ensuring no single point of failure"
+    ],
+    "images": [
+      "p11",
+      "p12"
+    ],
+    "githubFrontend": "https://github.com/AnukaFonseka/Blockchain-based-Voting-dApp",
+    "githubBackend": "https://github.com/AnukaFonseka/Blockchain-based-Voting-dApp"
+  },
+  {
+    "id": 2,
+    "name": "Medisense",
+    "description": "A comprehensive web-based management system developed for Medisense Laboratory Pvt Ltd",
+    "techStack": ["React", "Express", "Sequelize", "MySQL", "JWT", "Bcrypt"],
+    "keyFeatures": [
+      "User role-based access and permissions",
+      "User authentication and authorization system for secure login and account access.",
+      "Cashier and reception managemen",
+      "Doctor and patient record management",
+      "Separate modules for mini lab, main lab, and x-ray processing",
+      "Test result management and reporting"
+    ],
+    "images": [
+      "p51",
+      "p52",
+      "p54",
+      "p53",
+      "p56"
+
+    ],
+    "githubFrontend": "https://github.com/AnukaFonseka/medisense_be",
+    "githubBackend": "https://github.com/AnukaFonseka/medisense_be"
+  },
+  {
+    "id": 3,
+    "name": "Recipe App",
+    "description": "A full-stack Recipe App to find and save your favorite meal recipes.",
+    "techStack": ["React", "Node.js", "TailwindCSS", "MongoDB", "Open API"],
+    "keyFeatures": [
+      "Secure user authentication.",
+      "Fully responsive user interface.",
+      "Save your favourite recipes."
+    ],
+    "images": [
+      "p31",
+      "p32"
+    ],
+    "githubFrontend": "https://github.com/AnukaFonseka/Recipe-app-be",
+    "githubBackend": "https://github.com/AnukaFonseka/Recipe-app-be"
+  },
+  {
+    "id": 6,
+    "name": "Inventory Management App",
+    "description": "A web-based system developed to streamline event planning and inventory management",
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Material UI",
+      "RTK Query",
+      "Tailwind CSS"],
+    "keyFeatures": [
+      "Inventory tracking and control with notifications for low stock",
+      "Event scheduling and management for various types of events",
+      "User-friendly dashboard for event and inventory overview",
+      "Role-based access for admin and staff",
+      "Real-time status updates for events and resources",
+      "Integration of event calendar and resource management",
+      "Reports generation for event summaries and inventory usage"
+    ],
+    "images": [
+      "p61",
+      "p62"
+    ],
+    "githubFrontend": "https://github.com/your-frontend-repo",
+    "githubBackend": "https://github.com/your-backend-repo"
+  },
+  {
+    "id": 5,
+    "name": "Book Seller Platform",
+    "description": "A platform to explore, review, and rate books effortlessly online.",
+    "techStack": ["React", "Node.js", "MongoDB", "TailwindCSS"],
+    "keyFeatures": [
+      "Secure payment gateway integration using Stripe for easy and safe transactions.",
+      "User authentication system for secure logins and account management.",
+      "Admin panel for managing products, orders, and user accounts."
+    ],
+    "images": [
+      "p21",
+      "p22",
+      "p23"
+    ],
+    "githubFrontend": "https://github.com/your-frontend-repo",
+    "githubBackend": "https://github.com/your-backend-repo"
+  },
+  {
+    "id": 4,
+    "name": "ICU Patient Monitoring System",
+    "description": "Vital Watch is a smart ICU patient monitoring system designed to replace traditional paper records with digital monitoring. ",
+    "techStack": ["React", "Redux", "Bootstrap ", "Node.js", "MySQL", "Sequelize", "ApexCharts" ],
+    "keyFeatures": [
+      "Real-time vital sign monitoring",
+      "Patient data analysis and insights",
+      "Patient database maintenance",
+      "Role-based access control for secure data handling"
+    ],
+    "images": [
+      "p41",
+      "p42",
+      "p43",
+      "p44"
+    ],
+    "githubFrontend": "https://github.com/your-frontend-repo",
+    "githubBackend": "https://github.com/your-backend-repo"
+  }
+]
