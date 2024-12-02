@@ -64,13 +64,13 @@ const Projects = () => {
   };
 
   return (
-    <div
+    <section
       id="projects"
       className="pb-16 px-4 sm:px-6 bg-white flex flex-col items-center"
     >
       {/* <hr className="border border-primary w-full mx-auto mb-12" /> */}
       <div className="text-center mb-12 w-full">
-        <p className="text-lg text-deep-blue mt-2">Projects</p>
+        <p className="text-lg text-deep-blue mt-2">Recent Projects</p>
         <h2 className="text-3xl md:text-5xl font-bold text-deep-blue">My Work</h2>
       </div>
 
@@ -193,7 +193,7 @@ const Projects = () => {
           </div>
         </Box>
       </Modal>
-    </div>
+    </section>
   );
 };
 

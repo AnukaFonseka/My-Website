@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-light-bg-blue text-deep-blue py-10 px-5 md:px-20">
+    <section id="contact" className="bg-light-bg-blue text-deep-blue py-10 px-5 md:px-20">
       {/* Header Section */}
       <div className="flex flex-col w-full justify-center items-center mb-12 text-center">
         <p className="text-gray-500 md:text-lg mb-2">
@@ -30,10 +30,10 @@ const Footer = () => {
           <p className="flex items-center">
             <i className="fas fa-phone bg-primary text-white p-2 rounded-full mr-3"></i>
             <a
-              href="tel:+1234567890"
+              href="tel:+94760723331"
               className="hover:text-primary transition"
             >
-              +123 456 7890
+              +94 76 072 3331
             </a>
           </p>
         </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             <li className="flex items-center">
               <i className="fab fa-github bg-primary text-white p-2 rounded-full mr-3"></i>
               <a
-                href="https://github.com/your_username"
+                href="https://github.com/AnukaFonseka"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
@@ -56,7 +56,7 @@ const Footer = () => {
             <li className="flex items-center">
               <i className="fab fa-linkedin bg-primary text-white p-2 rounded-full mr-3"></i>
               <a
-                href="https://www.linkedin.com/in/your_username/"
+                href="https://www.linkedin.com/in/anukafonseka/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
@@ -67,7 +67,7 @@ const Footer = () => {
             <li className="flex items-center">
               <i className="fas fa-file-alt bg-primary text-white p-2 rounded-full mr-3"></i>
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1b1ezHqgau4B2e4uRZHfnwAh5NOLeG2Gg/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
@@ -91,7 +91,7 @@ const Footer = () => {
               <i className="fab fa-twitter bg-gray-100 text-primary p-3 rounded-full"></i>
             </a>
             <a
-              href="https://instagram.com/your_username"
+              href="https://instagram.com/_.a.n.u.k.a._"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:text-deep-blue transition"
@@ -99,7 +99,7 @@ const Footer = () => {
               <i className="fab fa-instagram bg-gray-100 text-primary p-3 rounded-full"></i>
             </a>
             <a
-              href="https://facebook.com/your_username"
+              href="https://facebook.com/anuka.fonseka.3"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:text-deep-blue transition"
@@ -122,7 +122,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Anuka Fonseka. All Rights Reserved.
         </p>
       </div>
-    </footer>
+    </section>
   );
 };
 

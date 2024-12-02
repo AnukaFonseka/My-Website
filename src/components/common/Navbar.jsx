@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import profile from "../../assets/images/profile.jpeg";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -15,8 +16,35 @@ function Navbar() {
     setIsMenuOpen(false); // Close menu on mobile after clicking
   };
 
+  // Set up IntersectionObserver
+  useEffect(() => {
+    const sections = document.querySelectorAll("section"); // Select all sections
+    const options = {
+      root: null,
+      threshold: 0.6, // Trigger when 60% of the section is in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id); // Update active section
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
-    <nav className="z-50 w-full bg-white shadow-md sticky top-0 flex justify-between items-center px-3 md:px-20 py-1">
+    <nav className="z-50 w-full bg-white shadow-md sticky top-0 flex justify-between items-center px-3 md:px-20 py-0">
       {/* Logo and Name */}
       <div
         className="flex items-center cursor-pointer"
@@ -39,36 +67,17 @@ function Navbar() {
 
       {/* Desktop Navbar Links */}
       <div className="hidden md:flex space-x-8 font-medium text-black">
-        <p
-          className="cursor-pointer hover:text-blue-500"
-          onClick={() => scrollToSection("home")}
-        >
-          Home
-        </p>
-        <p
-          className="cursor-pointer hover:text-blue-500"
-          onClick={() => scrollToSection("about")}
-        >
-          About Me
-        </p>
-        <p
-          className="cursor-pointer hover:text-blue-500"
-          onClick={() => scrollToSection("projects")}
-        >
-          Projects
-        </p>
-        <p
-          className="cursor-pointer hover:text-blue-500"
-          onClick={() => scrollToSection("experience")}
-        >
-          Experience
-        </p>
-        <p
-          className="cursor-pointer hover:text-blue-500"
-          onClick={() => scrollToSection("contact")}
-        >
-          Contact
-        </p>
+      {["home", "about", "projects", "experience", "contact"].map((section) => (
+          <p
+            key={section}
+            className={`cursor-pointer hover:text-blue-500 ${
+              activeSection === section ? "text-primary" : ""
+            }`}
+            onClick={() => scrollToSection(section)}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </p>
+        ))}
       </div>
 
       {/* Mobile Hamburger Menu */}

@@ -8,7 +8,7 @@ import experienceData from "../../assets/data/experience.json";
 
 const Experience = () => {
   return (
-    <div id="experience"  className="bg-white text-white py-12 px-5 md:px-40">
+    <section id="experience"  className="bg-white text-white py-12 px-5 md:px-40">
       <div className="flex flex-col w-full justify-center items-center mb-20 text-center">
         <p className="text-deep-blue md:text-lg mb-1 md:mb-3">
           What I have done so far
@@ -62,7 +62,7 @@ const Experience = () => {
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
-    </div>
+    </section>
   );
 };
 
