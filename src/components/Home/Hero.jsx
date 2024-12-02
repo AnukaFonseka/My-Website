@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col-reverse md:flex-row items-center justify-center md:h-screen bg-cover bg-center bg-fixed md:-mt-32 pt-10 md:pt-0 px-6 md:px-40"
+      className="relative flex flex-col-reverse md:flex-row items-center justify-center md:h-screen bg-cover bg-center bg-fixed md:-mt-16 pt-10 md:pt-0 px-6 md:px-40"
       style={{
         backgroundColor: "rgba(245, 252, 255, 100)",
         backgroundBlendMode: "overlay",
