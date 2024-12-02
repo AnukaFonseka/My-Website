@@ -29,6 +29,8 @@ import p56 from "../../assets/projects/medisense/m6.png"
 
 import p61 from "../../assets/projects/wbs/w3.png"
 import p62 from "../../assets/projects/wbs/w4.png"
+import p63 from "../../assets/projects/wbs/w1.png"
+import p64 from "../../assets/projects/wbs/w2.png"
 
 const imgArray = {
   p11, p12,
@@ -36,7 +38,7 @@ const imgArray = {
   p31, p32,
   p41, p42, p43, p44,
   p51, p52, p53, p54, p56,
-  p61, p62
+  p61, p62, p63, p64
 }
 
 const Projects = () => {
@@ -160,14 +162,14 @@ const Projects = () => {
           </div>
 
           {/* Image Slider Section */}
-          <div className="mb-6">
+          <div className="mb-6 outline-none">
             <Slider {...sliderSettings}>
               {selectedProject?.images.map((image, index) => (
-                <div key={index}>
+                <div key={index} className="outline-none">
                   <img
                     src={imgArray[image]}
                     alt={`Project image ${index + 1}`}
-                    className="w-full h-48 md:h-64 object-cover rounded-lg shadow-md"
+                    className="w-full h-48 md:h-auto object-cover rounded-lg shadow-md outline-none"
                   />
                 </div>
               ))}

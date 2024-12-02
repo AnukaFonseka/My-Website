@@ -79,17 +79,19 @@
       "Reports generation for event summaries and inventory usage"
     ],
     "images": [
+      "p62",
       "p61",
-      "p62"
+      "p63",
+      "p64"
     ],
-    "githubFrontend": "https://github.com/your-frontend-repo",
-    "githubBackend": "https://github.com/your-backend-repo"
+    "githubFrontend": "https://github.com/AnukaFonseka/Weddings_By_Sonali_FE",
+    "githubBackend": "https://github.com/AnukaFonseka/Weddings_By_Sonali_BE"
   },
   {
     "id": 5,
     "name": "Book Seller Platform",
     "description": "A platform to explore, review, and rate books effortlessly online.",
-    "techStack": ["React", "Node.js", "MongoDB", "TailwindCSS"],
+    "techStack": ["React", "Node.js", "MySQL", "TailwindCSS"],
     "keyFeatures": [
       "Browse, search, and filter books by categories or titles.",
       "User authentication system for secure logins and account management.",
@@ -123,7 +125,7 @@
       "p43",
       "p44"
     ],
-    "githubFrontend": "https://github.com/your-frontend-repo",
-    "githubBackend": "https://github.com/your-backend-repo"
+    "githubFrontend": "https://github.com/AnukaFonseka/vital_watch_be",
+    "githubBackend": "https://github.com/AnukaFonseka/vital_watch_be"
   }
 ]
