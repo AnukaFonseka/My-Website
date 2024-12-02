@@ -117,9 +117,15 @@ const Projects = () => {
           }}
           className="text-deep-blue"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            {selectedProject?.name}
-          </h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold ">
+              {selectedProject?.name}
+            </h2>
+            <span onClick={handleCloseModal} class="material-symbols-outlined cursor-pointer hover:text-primary font-bold">
+              close
+            </span>
+          </div>
+          
           <p className="text-sm md:text-base text-deep-blue mb-4">
             {selectedProject?.description}
           </p>

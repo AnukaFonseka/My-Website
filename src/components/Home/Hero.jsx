@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col-reverse md:flex-row items-center justify-center md:h-screen bg-cover bg-center bg-fixed md:-mt-32 pt-10 md:pt-0 px-6 md:px-20"
+      className="relative flex flex-col-reverse md:flex-row items-center justify-center md:h-screen bg-cover bg-center bg-fixed md:-mt-32 pt-10 md:pt-0 px-6 md:px-40"
       style={{
         backgroundColor: "rgba(245, 252, 255, 100)",
         backgroundBlendMode: "overlay",
@@ -25,7 +25,7 @@ const Hero = () => {
       }}
     >
       {/* Text Content */}
-      <div className="relative text-center md:text-left w-full md:w-1/2 p-5 md:p-10 mx-auto z-10">
+      <div className="relative text-center md:text-left w-full md:w-1/2 mx-auto z-10">
         <h1 className="text-deep-blue text-2xl md:text-5xl font-bold leading-tight mb-4">
           Hey!, I’m <span className="text-primary">Anuka</span>
         </h1>

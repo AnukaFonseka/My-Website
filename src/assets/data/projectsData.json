@@ -37,7 +37,7 @@
       "p56"
 
     ],
-    "githubFrontend": "https://github.com/AnukaFonseka/medisense_be",
+    "githubFrontend": "https://github.com/AnukaFonseka/Medisense_FE",
     "githubBackend": "https://github.com/AnukaFonseka/medisense_be"
   },
   {
@@ -91,9 +91,12 @@
     "description": "A platform to explore, review, and rate books effortlessly online.",
     "techStack": ["React", "Node.js", "MongoDB", "TailwindCSS"],
     "keyFeatures": [
-      "Secure payment gateway integration using Stripe for easy and safe transactions.",
+      "Browse, search, and filter books by categories or titles.",
       "User authentication system for secure logins and account management.",
-      "Admin panel for managing products, orders, and user accounts."
+      "Submit, edit, and delete reviews with dynamic average ratings.",
+      "Manage books and moderate user-generated reviews.",
+      "RESTful APIs secured with JWT for authenticated data operations.",
+      "User-friendly interface optimized for all devices."
     ],
     "images": [
       "p21",

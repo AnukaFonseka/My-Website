@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <section id="contact" className="bg-light-bg-blue text-deep-blue py-10 px-5 md:px-20">
+    <section id="contact" className="bg-light-bg-blue text-deep-blue py-10 px-5 md:px-40">
       {/* Header Section */}
       <div className="flex flex-col w-full justify-center items-center mb-12 text-center">
         <p className="text-gray-500 md:text-lg mb-2">
@@ -14,7 +14,8 @@ const Footer = () => {
       </div>
 
       {/* Grid Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 ">
         {/* Contact Section */}
         <div>
           <h2 className="text-deep-blue text-lg font-bold mb-4">Contact Me</h2>
