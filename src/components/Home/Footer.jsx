@@ -14,7 +14,7 @@ const Footer = () => {
       </div>
 
       {/* Grid Section */}
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 ">
         {/* Contact Section */}
         <div>
@@ -68,7 +68,7 @@ const Footer = () => {
             <li className="flex items-center">
               <i className="fas fa-file-alt bg-primary text-white p-2 rounded-full mr-3"></i>
               <a
-                href="https://drive.google.com/file/d/1b1ezHqgau4B2e4uRZHfnwAh5NOLeG2Gg/view?usp=drive_link"
+                href="https://drive.google.com/drive/folders/1agRk0ckSylf30RT4bZuSc5ChYfdchLmf?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
