@@ -151,7 +151,7 @@ function Navbar() {
           </span>
         </a>
         <a
-          href="https://drive.google.com/file/d/1Xc_jCwd075Uz2obHd84ZNtyIrXJCVNPs/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1b1ezHqgau4B2e4uRZHfnwAh5NOLeG2Gg/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-black hover:text-blue-500 transition"
