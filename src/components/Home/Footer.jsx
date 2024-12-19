@@ -68,7 +68,7 @@ const Footer = () => {
             <li className="flex items-center">
               <i className="fas fa-file-alt bg-primary text-white p-2 rounded-full mr-3"></i>
               <a
-                href="https://drive.google.com/file/d/1cRsCjRCTwrsxWYfBfn78lLnHh-2cEvea/view?usp=sharing"
+                href="https://drive.google.com/file/d/1kJdqo5-cNMGjJpN5TnTE29V_1EGBRC5U/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
