@@ -24,7 +24,6 @@ function App() {
       <Projects/>
       <Experience />
       <Footer />
-      <Analytics />
     </>
   )
 }
