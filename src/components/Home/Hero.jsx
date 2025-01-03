@@ -7,11 +7,11 @@ const Hero = () => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 70, // Adjust for navbar height
+        top: element.offsetTop - 70,
         behavior: "smooth",
       });
     }
-    setIsMenuOpen(false); // Close menu on mobile after clicking
+    setIsMenuOpen(false); 
   };
 
   return (
@@ -36,7 +36,7 @@ const Hero = () => {
           "Turning ideas into responsive, functional designs."
         </p> */}
         <button 
-        className="bg-primary text-white rounded-md px-4 py-2 text-sm md:text-base hover:bg-deep-blue transition outline-none"
+        className="bg-primary text-white rounded-md px-4 py-2 text-sm md:text-base hover:bg-deep-blue transition outline-none mb-4 md:mb-0"
         onClick={() => scrollToSection("contact")}>
           Get in touch
         </button>
