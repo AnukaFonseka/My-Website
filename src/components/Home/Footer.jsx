@@ -22,10 +22,10 @@ const Footer = () => {
           <p className="flex items-center mb-2">
             <i className="fas fa-envelope bg-primary text-white p-2 rounded-full mr-3"></i>
             <a
-              href="mailto:akunafonseka@example.com"
+              href="mailto:akunafonseka@gmail.com"
               className="hover:text-primary transition"
             >
-              akunafonseka@example.com
+              akunafonseka@gmail.com
             </a>
           </p>
           <p className="flex items-center">
