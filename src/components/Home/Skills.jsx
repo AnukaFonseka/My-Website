@@ -6,10 +6,9 @@ const skills = [
   { name: "Node.js", icon: "fab fa-node-js" },
   { name: "MySQL", icon: "fas fa-database" },
   { name: "MongoDB", icon: "fas fa-database" },
-  { name: "Tailwind", icon: "fab fa-css3-alt" },
+  { name: "TailwindCSS", icon: "fab fa-css3-alt" },
   { name: "Java", icon: "fab fa-java" },
   { name: "JavaScript", icon: "fab fa-js" },
-  { name: "C", icon: "fas fa-code" },
   { name: "Python", icon: "fab fa-python" },
   { name: "Express.js", icon: "fas fa-server" },
   { name: "AWS", icon: "fab fa-aws" },
@@ -19,9 +18,9 @@ const skills = [
   { name: "Sequelize", icon: "fas fa-database" },
   { name: "OOP", icon: "fas fa-cubes" },
   { name: "Figma", icon: "fab fa-figma" },
-  { name: "Jira", icon: "fab fa-jira" },
-  { name: "Confluence", icon: "fas fa-book" },
   { name: "REST", icon: "fas fa-link" },
+  { name: "Linux", icon: "fab fa-linux" },
+  { name: "Springboot", icon: "fab fa-java" },
 ];
 
 export default function Skills() {
