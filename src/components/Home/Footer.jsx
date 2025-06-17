@@ -84,14 +84,6 @@ const Footer = () => {
           <h2 className="text-deep-blue text-lg font-bold mb-4">Follow Me</h2>
           <div className="flex space-x-4">
             <a
-              href="https://twitter.com/your_username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-deep-blue transition"
-            >
-              <i className="fab fa-twitter bg-gray-100 text-primary p-3 rounded-full"></i>
-            </a>
-            <a
               href="https://instagram.com/_.a.n.u.k.a._"
               target="_blank"
               rel="noopener noreferrer"
