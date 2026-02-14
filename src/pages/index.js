@@ -15,11 +15,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Awesome Portfolio Built with Nextjs</title>
+        <title>Anuka Fonseka Portfolio</title>
         <meta
           name="description"
-          content="Explore CodeBucks's Next.js developer portfolio and 
-        discover the latest webapp projects and software engineering articles. 
+          content="Explore Anuka Fonseka's Next.js developer portfolio and
+        discover the latest webapp projects and software engineering articles.
         Showcase your skills as a full-stack developer and software engineer."
         />
       </Head>
