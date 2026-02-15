@@ -6,17 +6,220 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import proj1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+// import proj11 from "../../public/images/projects/crypto-screener-cover-image.jpg";
 import proj2 from "../../public/images/projects/nft-collection-website-cover-image.jpg";
 import proj3 from "../../public/images/projects/fashion-studio-website.jpg";
 import proj4 from "../../public/images/projects/portfolio-cover-image.jpg";
 import proj5 from "../../public/images/projects/agency-website-cover-image.jpg";
 import proj6 from "../../public/images/projects/devdreaming.jpg";
+
+import proj11 from "../../public/images/projects/tution-manager/1.PNG";
+import proj12 from "../../public/images/projects/tution-manager/2.PNG";
+import proj13 from "../../public/images/projects/tution-manager/3.PNG";
+import proj14 from "../../public/images/projects/tution-manager/4.PNG";
+import proj15 from "../../public/images/projects/tution-manager/5.PNG";
+import proj16 from "../../public/images/projects/tution-manager/6.PNG";
+
+import proj21 from "../../public/images/projects/digital-raffle/1.PNG";
+import proj22 from "../../public/images/projects/digital-raffle/2.PNG";
+
+import proj31 from "../../public/images/projects/voting-dapp/1.PNG";
+import proj32 from "../../public/images/projects/voting-dapp/2.PNG";
+
+import proj41 from "../../public/images/projects/futsal-hub/1.PNG";
+import proj42 from "../../public/images/projects/futsal-hub/2.PNG";
+import proj43 from "../../public/images/projects/futsal-hub/3.PNG";
+import proj44 from "../../public/images/projects/futsal-hub/4.PNG";
+
+import proj51 from "../../public/images/projects/book-review-app/1.PNG";
+import proj52 from "../../public/images/projects/book-review-app/2.PNG";
+import proj53 from "../../public/images/projects/book-review-app/3.PNG";
+
+import proj61 from "../../public/images/projects/medisense/1.PNG";
+import proj62 from "../../public/images/projects/medisense/2.PNG";
+import proj63 from "../../public/images/projects/medisense/3.PNG";
+import proj64 from "../../public/images/projects/medisense/4.PNG";
+import proj65 from "../../public/images/projects/medisense/5.PNG";
+import proj66 from "../../public/images/projects/medisense/6.PNG";
+import proj67 from "../../public/images/projects/medisense/7.PNG";
+
+import proj71 from "../../public/images/projects/weddings-by-sonali/1.PNG";
+import proj72 from "../../public/images/projects/weddings-by-sonali/2.PNG";
+import proj73 from "../../public/images/projects/weddings-by-sonali/3.PNG";
+import proj74 from "../../public/images/projects/weddings-by-sonali/4.PNG";
+
+
 import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
-const FeaturedProject = ({ type, title, summary, img, link, github, techStack, features }) => {
+// Image Slider Component
+const ImageSlider = ({ images, title }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+  };
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity;
+  };
+
+  const paginate = (newDirection) => {
+    setDirection(newDirection);
+    setCurrentIndex((prevIndex) => {
+      let nextIndex = prevIndex + newDirection;
+      if (nextIndex < 0) nextIndex = images.length - 1;
+      if (nextIndex >= images.length) nextIndex = 0;
+      return nextIndex;
+    });
+  };
+
+  return (
+    <div className="relative w-full overflow-hidden rounded-lg group">
+      {/* Add fixed aspect ratio container */}
+      <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
+
+              if (swipe < -swipeConfidenceThreshold) {
+                paginate(1);
+              } else if (swipe > swipeConfidenceThreshold) {
+                paginate(-1);
+              }
+            }}
+            className="absolute inset-0" // Changed to absolute positioning
+          >
+            <FramerImage
+              src={images[currentIndex]}
+              className="h-full w-full object-cover" // Changed to object-cover
+              alt={`${title} - Image ${currentIndex + 1}`}
+              fill // Use fill instead of h-auto w-full
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={currentIndex === 0}
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Navigation Arrows */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              paginate(-1);
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-dark/70 dark:bg-light/70 
+                     text-light dark:text-dark rounded-full p-2 opacity-0 group-hover:opacity-100 
+                     transition-opacity duration-300 hover:bg-dark dark:hover:bg-light"
+            aria-label="Previous image"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              paginate(1);
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-dark/70 dark:bg-light/70 
+                     text-light dark:text-dark rounded-full p-2 opacity-0 group-hover:opacity-100 
+                     transition-opacity duration-300 hover:bg-dark dark:hover:bg-light"
+            aria-label="Next image"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {/* Dot Indicators */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "w-8 bg-primary dark:bg-primaryDark"
+                  : "w-2 bg-light/50 dark:bg-dark/50 hover:bg-light/80 dark:hover:bg-dark/80"
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const FeaturedProject = ({ type, title, summary, images, link, github, techStack, features }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -37,18 +240,9 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
         target={"_blank"}
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
       >
-        <FramerImage
-          src={img}
-          className="h-auto w-full"
-          alt={title}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-          priority
-        />
+        <ImageSlider images={images} title={title} />
       </Link>
+
       <div className="flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
         <span className="text-xl font-medium text-primary dark:text-primaryDark xs:text-base">
           {type}
@@ -66,8 +260,19 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
           {summary}
         </p>
 
+        <div className="flex flex-wrap gap-2">
+          {techStack.map((tech, index) => (
+            <span
+              key={index}
+              className="rounded-md bg-dark px-3 py-1 text-sm font-medium text-light dark:bg-light dark:text-dark xs:px-2 xs:py-0.5 xs:text-xs"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
         {/* Expandable Details Section */}
-        {(techStack || features) && (
+        {(features) && (
           <div className="mt-3 w-full">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -105,7 +310,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
                 >
                   <div className="pt-4 space-y-4">
                     {/* Tech Stack Section */}
-                    {techStack && techStack.length > 0 && (
+                    {/* {techStack && techStack.length > 0 && (
                       <div>
                         <h3 className="mb-2 text-base font-semibold text-dark dark:text-light xs:text-sm">
                           Tech Stack
@@ -121,7 +326,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
                           ))}
                         </div>
                       </div>
-                    )}
+                    )} */}
 
                     {/* Key Features Section */}
                     {features && features.length > 0 && (
@@ -175,8 +380,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
   );
 };
 
-const Project = ({ title, type, img, link, github }) => {
-
+const Project = ({ title, type, images, link, github, techStack }) => {
   return (
     <article
       className="relative flex w-full flex-col items-center justify-center rounded-2xl  rounded-br-2xl 
@@ -195,17 +399,9 @@ const Project = ({ title, type, img, link, github }) => {
         target={"_blank"}
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <FramerImage
-          src={img}
-          alt={title}
-          className="h-auto w-full"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-        />
+        <ImageSlider images={images} title={title} />
       </Link>
+
       <div className="mt-4 flex w-full flex-col items-start justify-between">
         <span className="text-xl font-medium text-primary dark:text-primaryDark lg:text-lg md:text-base">
           {type}
@@ -220,25 +416,41 @@ const Project = ({ title, type, img, link, github }) => {
             {title}
           </h2>
         </Link>
-        <div className="flex w-full items-center  justify-between">
-          <Link
-            href={link}
-            target={"_blank"}
-            className="rounded text-lg
-            font-medium underline md:text-base
-            "
-            aria-label={title}
-          >
-            Visit
-          </Link>
-          <Link
-            href={github}
-            target={"_blank"}
-            className="w-8 md:w-6"
-            aria-label={title}
+
+        <div className="flex flex-wrap gap-2">
+          {techStack && (techStack.map((tech, index) => (
+            <span
+              key={index}
+              className="rounded-md bg-dark px-3 py-1 text-sm font-medium text-light dark:bg-light dark:text-dark xs:px-2 xs:py-0.5 xs:text-xs"
+            >
+              {tech}
+            </span>
+          )))}
+        </div>
+        <div className="flex w-full items-center  justify-between mt-4">
+          {link && (
+            <Link
+              href={link}
+              target={"_blank"}
+              className="rounded text-lg
+              font-medium underline md:text-base
+              "
+              aria-label={title}
+            >
+              Visit
+            </Link>
+          )}
+          
+          {github && (
+            <Link
+              href={github}
+              target={"_blank"}
+              className="w-8 md:w-6"
+              aria-label={title}
           >
             <GithubIcon />
           </Link>
+          )}
         </div>
       </div>
     </article>
@@ -271,10 +483,10 @@ export default function Projects() {
               <FeaturedProject
                 type="Featured Project"
                 title="Tution Manager – Comprehensive Tuition Management System"
-                summary="TutionHub is a full-featured web application designed to help teachers and educational institutions streamline their tuition operations. It provides an all-in-one solution for managing classes, students, payments, and academic assignments through a modern, mobile-optimized interface."
-                img={proj1}
-                link="#"
-                github="#"
+                summary="Tution Manager is a full-featured web application designed to help startup teachers to streamline their tuition operations. It provides an all-in-one solution for managing classes, students, payments, and academic assignments through a modern, mobile-optimized interface."
+                images={[proj11, proj12, proj13, proj14, proj15, proj16]} // Array of images for slider
+                link="https://class-manager-beta.vercel.app"
+                github="https://github.com/AnukaFonseka/tution-management-app.git"
                 techStack={[
                   "Next.js",
                   "Supabase",
@@ -292,20 +504,27 @@ export default function Projects() {
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Website Template"
-                title="NFT collection Website"
-                img={proj2}
-                link="https://devdreaming.com/videos/create-nft-collection-website-reactjs"
-                github="https://github.com/codebucks27/The-Weirdos-NFT-Website-Starter-Code"
+                type="Website"
+                title="Richmond College 150th Anniversary Digital Raffle Website"
+                images={[proj21, proj22]} // Array of images for slider
+                link="https://raffle.rcoba.lk"
+                github=""
+                techStack={[
+                  "Next.js",
+                  "Supabase",
+                  "Stripe"
+                  
+                ]}
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Website"
-                title="Fashion Studio Website"
-                img={proj3}
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/codebucks27/wibe-studio"
+                type="D-App"
+                title="Blockchain Based Online Voting D-App"
+                images={[proj31, proj32]} // Array of images for slider
+                link=""
+                github="https://github.com/AnukaFonseka/Blockchain-based-Voting-dApp"
+                techStack={["Next.js", "Ethereum", "Solidity", "Hardhat"]}
               />
             </div>
             <div className="col-span-12">
@@ -313,7 +532,7 @@ export default function Projects() {
                 type="Featured Project"
                 title="FutsalHub – Futsal Match and Player Management System"
                 summary="FutsalHub is a modern web application built to manage futsal matches, players, and team activities within a futsal club. It simplifies the coordination of games, player availability, and performance tracking through an intuitive, real-time interface."
-                img={proj4}
+                images={[proj44, proj41, proj42, proj43]} // Array of images for slider
                 link="#"
                 github="#"
                 techStack={[
@@ -336,20 +555,53 @@ export default function Projects() {
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Website Template"
-                img={proj5}
-                title="Agency Website Template"
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/codebucks27/wibe-studio"
+                type="Web Application"
+                images={[proj51, proj52, proj53]} // Array of images for slider
+                title="Book Seller Platform"
+                link=""
+                github="https://github.com/AnukaFonseka/book-review-app-fe"
+                techStack={[
+                  "React", "Node.js", "MySQL", "TailwindCSS"
+                ]}
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Blog Website"
-                img={proj6}
-                title="DevDreaming"
-                link="https://devdreaming.com"
-                github="https://github.com/codebucks27"
+                type="Web Application"
+                images={[proj61, proj62, proj63, proj64, proj65, proj66, proj67]} // Array of images for slider
+                title="Medical Laboratory Management System"
+                link=""
+                github="https://github.com/AnukaFonseka/medisense_be"
+                techStack={[
+                  "React", "Express", "Sequelize", "MySQL", "JWT", "Bcrypt"
+                ]}
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                type="Featured Project"
+                title="Event and Inventory Management System for Weddings By Sonali"
+                summary="A web-based system developed to streamline event planning and inventory management for Weddings By Sonali, an event planning company. This application facilitates efficient handling of both inventory and event operations, enhancing organization and management capabilities."
+                images={[proj71, proj72, proj73, proj74]} // Array of images for slider
+                link=""
+                github="#"
+                techStack={[
+                  "React",
+                  "Node",
+                  "Express",
+                  "MySQL",
+                  "Tailwind CSS",
+                  "RTK Query"
+                ]}
+                features={[
+                  "Inventory tracking and control with notifications for low stock",
+                  "Event scheduling and management for various types of events",
+                  "User-friendly dashboard for event and inventory overview",
+                  "Role-based access for admin and staff",
+                  "Real-time status updates for events and resources",
+                  "Integration of event calendar and resource management",
+                  "Reports generation for event summaries and inventory usage"
+                ]}
               />
             </div>
           </div>
