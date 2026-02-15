@@ -13,7 +13,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Anuka Fonseka | Software Engineer | About</title>
+        <title>Who I am - Anuka Fonseka</title>
         <meta name="description" content="Learn more about Anuka Fonseka, a Software Engineer specializing in full-stack development, enterprise systems, and modern web technologies. Passionate about building scalable solutions with Java, Spring Boot, Next.js, and cloud infrastructure." />
       </Head>
       <TransitionEffect />

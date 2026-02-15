@@ -15,12 +15,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Anuka Fonseka Portfolio</title>
+        <title>Anuka Fonseka - Software Engineer</title>
         <meta
           name="description"
-          content="Explore Anuka Fonseka's Next.js developer portfolio and
-        discover the latest webapp projects and software engineering articles.
-        Showcase your skills as a full-stack developer and software engineer."
+          content="Anuka Fonseka is a Software Engineer specializing in full-stack development, enterprise systems, and modern web technologies. Passionate about building scalable solutions with Java, Spring Boot, Next.js, and cloud infrastructure."
         />
       </Head>
 

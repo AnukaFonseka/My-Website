@@ -6,12 +6,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-// import proj11 from "../../public/images/projects/crypto-screener-cover-image.jpg";
-import proj2 from "../../public/images/projects/nft-collection-website-cover-image.jpg";
-import proj3 from "../../public/images/projects/fashion-studio-website.jpg";
-import proj4 from "../../public/images/projects/portfolio-cover-image.jpg";
-import proj5 from "../../public/images/projects/agency-website-cover-image.jpg";
-import proj6 from "../../public/images/projects/devdreaming.jpg";
 
 import proj11 from "../../public/images/projects/tution-manager/1.PNG";
 import proj12 from "../../public/images/projects/tution-manager/2.PNG";
@@ -461,11 +455,10 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Modern Portfolio Built with Nextjs | Projects Page</title>
+        <title>My Projects - Anuka Fonseka</title>
         <meta
           name="description"
-          content="Discover the latest webapp projects created by CodeBucks, a Next.js developer with 
-        expertise in React.js and full-stack development. Browse software engineering articles and tutorials for tips on creating your own portfolio."
+          content="Explore Anuka Fonseka's software engineering projects, showcasing expertise in Next.js, React, blockchain, and full-stack development. Discover innovative web applications and DApps that demonstrate a passion for technology and problem-solving."
         />
       </Head>
 
