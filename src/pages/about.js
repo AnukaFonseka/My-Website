@@ -7,6 +7,7 @@ import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import AnimatedText from "@/components/AnimatedText";
 import TransitionEffect from "@/components/TransitionEffect";
+import { LinkArrow } from "@/components/Icons";
 
 export default function About() {
   return (
@@ -35,7 +36,7 @@ export default function About() {
               <div className="space-y-4">
                 <p className="font-medium text-dark/90 dark:text-light/90 leading-relaxed">
                   Hello, I&apos;m <span className="text-primary dark:text-primaryDark font-semibold">Anuka Fonseka</span>, 
-                  a Software Engineer specializing in building enterprise-grade web applications and scalable 
+                  a Software Engineer specializing in building enterprise grade web applications and scalable 
                   backend systems. With a strong foundation in full-stack development, I transform complex 
                   business requirements into elegant, maintainable solutions.
                 </p>
@@ -49,7 +50,7 @@ export default function About() {
                 </p>
                 
                 <p className="font-medium text-dark/90 dark:text-light/90 leading-relaxed">
-                  Beyond writing code, I focus on the complete software lifecycle—from system architecture and 
+                  Beyond writing code, I focus on the complete software lifecycle from system architecture and 
                   database design to Docker containerization, CI/CD pipelines, and Linux infrastructure management. 
                   I believe in building systems that are not only functional but also secure, performant, and 
                   maintainable.
@@ -62,13 +63,13 @@ export default function About() {
                   complex problems collaboratively.
                 </p>
                 
-                <div className="pt-4 border-l-4 border-primary/30 dark:border-primaryDark/30 pl-4 mt-6">
+                {/* <div className="pt-4 border-l-4 border-primary/30 dark:border-primaryDark/30 pl-4 mt-6">
                   <p className="font-medium italic text-dark/75 dark:text-light/75 leading-relaxed">
-                    &quot;I&apos;m passionate about creating systems that make a difference—whether it&apos;s 
-                    streamlining authentication for thousands of users or building high-performance web platforms. 
+                    &quot;I&apos;m passionate about creating systems that make a difference whether it&apos;s 
+                    streamlining authentication for thousands of users or building high performance web platforms. 
                     Let&apos;s build something amazing together.&quot;
                   </p>
-                </div>
+                </div> */}
               </div>
               
               {/* Quick Links Section */}
@@ -85,28 +86,24 @@ export default function About() {
                   Get in Touch
                 </a>
                 
-                <a 
-                  href="/path-to-cv.pdf"
-                  download
+                <a
+                  href="https://drive.google.com/file/d/1Y38sQ-aZUQ_nBH4gcE5UFRql7QTU3LMi/view?usp=sharing"
+                  target="_blank"
                   className="group flex items-center gap-2 px-4 py-2 border-2 border-dark dark:border-light 
                   text-dark dark:text-light rounded-lg font-medium transition-all hover:bg-dark 
                   hover:text-light dark:hover:bg-light dark:hover:text-dark"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Download CV
+                  Resume <LinkArrow className="ml-1 !w-6 md:!w-4" />
                 </a>
               </div>
             </div>
 
             {/* Profile Image Section - 1/3 width, no frame or effects */}
-            <div className="col-span-1 h-max md:order-1">
+            <div className="col-span-1 h-full md:order-1 flex items-center justify-center">
               <Image
                 className="h-auto w-full rounded-2xl"
                 src={profile}
-                alt="Anuka Fonseka - Software Engineer"
+                alt="Anuka Fonseka - Software Engineer - Digital Art"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
               />
