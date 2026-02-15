@@ -533,7 +533,7 @@ export default function Projects() {
                 title="FutsalHub – Futsal Match and Player Management System"
                 summary="FutsalHub is a modern web application built to manage futsal matches, players, and team activities within a futsal club. It simplifies the coordination of games, player availability, and performance tracking through an intuitive, real-time interface."
                 images={[proj44, proj41, proj42, proj43]} // Array of images for slider
-                link="#"
+                link="https://futsalhub-hq.vercel.app/"
                 github="#"
                 techStack={[
                   "Next.js",
