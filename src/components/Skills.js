@@ -87,7 +87,7 @@ const Skills = () => {
       </div>
 
       {/* Optional: Performance Highlights Section */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
@@ -104,10 +104,10 @@ const Skills = () => {
             hover:shadow-lg transition-shadow md:p-4"
           >
             <div className="text-3xl font-bold text-primary dark:text-primaryDark mb-2 md:text-2xl">
-              95%+
+              DevOps
             </div>
             <div className="text-sm font-semibold text-dark/75 dark:text-light/75">
-              Lighthouse Performance Score
+              Containerization & CI/CD
             </div>
           </motion.div>
 
@@ -137,7 +137,7 @@ const Skills = () => {
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
