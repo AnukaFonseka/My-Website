@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
+        <meta name="google-site-verification" content="KCBnrfgNbAK2qjD7sX1qxJt-8nHklb8_2x8_bUu94eg" />
         <meta property="og:site_name" content="Anuka Fonseka" />
         <meta name="author" content="Anuka Fonseka" />
       </Head>
