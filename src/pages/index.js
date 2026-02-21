@@ -20,6 +20,11 @@ export default function Home() {
           name="description"
           content="Anuka Fonseka is a Software Engineer specializing in full-stack development, enterprise systems, and modern web technologies. Passionate about building scalable solutions with Java, Spring Boot, Next.js, and cloud infrastructure."
         />
+        <meta property="og:title" content="Anuka Fonseka - Software Engineer" />
+        <meta property="og:description" content="Software Engineer specializing in Java Spring Boot, Next.js, enterprise systems." />
+        <meta property="og:url" content="https://anuka-fonseka.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <TransitionEffect />

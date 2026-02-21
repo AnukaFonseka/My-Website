@@ -189,6 +189,26 @@ export default function ArticlePage({ article }) {
       <Head>
         <title>{article.title} - Anuka Fonseka</title>
         <meta name="description" content={article.description} />
+        <meta property="og:title" content={`${article.title} - Anuka Fonseka`} />
+        <meta property="og:description" content={article.description} />
+        <meta property="og:url" content={`https://anuka-fonseka.vercel.app/articles/${article.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="2026-02-01" />
+        <meta name="keywords" content={article.tags.join(', ')} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TechArticle",
+              "headline": article.title,
+              "description": article.description,
+              "author": { "@type": "Person", "name": "Anuka Fonseka" },
+              "datePublished": "2026-02-01",
+            })
+          }}
+        />
       </Head>
 
       <TransitionEffect />
