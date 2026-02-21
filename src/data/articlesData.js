@@ -3,6 +3,7 @@ export const articles = [
     slug: "wso2-sso-custom-claims-roles",
     title: "WSO2 Identity Server SSO Integration",
     subtitle: "Connecting Applications with Custom Claims & Role-Based Access",
+    author: "Anuka Fonseka",
     description:
       "A practical guide to integrating applications with WSO2 IS 7.1.0 using custom role-based claims like isAdmin when the user store is a read-only LDAP.",
     date: "February 2026",

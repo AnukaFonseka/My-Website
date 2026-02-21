@@ -247,6 +247,8 @@ export default function ArticlePage({ article }) {
             </p>
 
             <div className="flex items-center gap-4 text-xs text-dark/40 dark:text-light/30 font-medium">
+              <span>{article.author}</span>
+              <span>·</span>
               <span>{article.date}</span>
               <span>·</span>
               <span>{article.readTime}</span>
