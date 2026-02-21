@@ -22,7 +22,7 @@ export const articles = [
         type: "architecture",
         steps: [
           "User logs in",
-          "WSO2 Adaptive Auth Script runs",
+          "WSO2 Conditional Auth Script runs",
           "Script checks user's WSO2 local role (e.g., Internal/FFSP_Admin)",
           "Injects isAdmin = 'Y' or 'N' into local claims",
           "WSO2 includes isAdmin in userinfo response",
@@ -43,15 +43,16 @@ export const articles = [
       {
         type: "section",
         title: "Step 2: Create a Custom Local Claim for isAdmin",
-        body: "Go to Claims → Add → Add Local Claim and fill in the following:",
+        body: "Go to User Attributes & Stores → Attributes → Add New Attribute and fill in the following:",
       },
       {
         type: "table",
         headers: ["Field", "Value"],
         rows: [
-          ["Claim URI", "http://wso2.org/claims/isAdmin"],
+          ["Attribute Name", "isAdmin"],
+          ["Attribute URI", "http://wso2.org/claims/isAdmin"],
           ["Display Name", "isAdmin"],
-          ["Mapped Attribute", "Leave empty (set by adaptive script)"],
+          ["Mapped Attribute", "Leave empty or add a default placeholder like 'N' (value will be set by the adaptive script)"],
         ],
       },
       {
@@ -63,40 +64,39 @@ export const articles = [
       {
         type: "section",
         title: "Step 3: Create a Custom OIDC Scope",
-        body: `This groups the custom claims together so the application can request them in one scope.\n\nGo to Console → Applications → Scopes, create a new scope named ffsp_claims, and add the following claims to it:\n• isAdmin\n• userNo\n• userName`,
+        body: `This groups the custom claims together so the application can request them in one scope.\n\nGo to Console → User Attributes & Stores → Attributes → OpenID Connect → Scopes, create a new scope named ffsp_claims, and add the following attributes to it:\n• isAdmin\n• userNo\n• userName`,
       },
+      // {
+      //   type: "section",
+      //   title: "Step 4: Add OIDC External Claim Mappings",
+      //   body: "This step bridges the local claim layer to the OIDC token layer. Without this, claims will have values internally but won't appear in the JWT or userinfo response.\n\nGo to Claims → Add → Add External Claim, select dialect http://wso2.org/oidc/claim, and add:",
+      // },
+      // {
+      //   type: "table",
+      //   headers: ["External Claim URI (OIDC)", "Mapped Local Claim"],
+      //   rows: [
+      //     ["http://wso2.org/oidc/claim/isAdmin", "http://wso2.org/claims/isAdmin"],
+      //     ["http://wso2.org/oidc/claim/userNo", "http://wso2.org/claims/userNo"],
+      //     ["http://wso2.org/oidc/claim/userName", "http://wso2.org/claims/userName"],
+      //   ],
+      // },
       {
         type: "section",
-        title: "Step 4: Add OIDC External Claim Mappings",
-        body: "This step bridges the local claim layer to the OIDC token layer. Without this, claims will have values internally but won't appear in the JWT or userinfo response.\n\nGo to Claims → Add → Add External Claim, select dialect http://wso2.org/oidc/claim, and add:",
-      },
-      {
-        type: "table",
-        headers: ["External Claim URI (OIDC)", "Mapped Local Claim"],
-        rows: [
-          ["http://wso2.org/oidc/claim/isAdmin", "http://wso2.org/claims/isAdmin"],
-          ["http://wso2.org/oidc/claim/userNo", "http://wso2.org/claims/userNo"],
-          ["http://wso2.org/oidc/claim/userName", "http://wso2.org/claims/userName"],
-        ],
-      },
-      {
-        type: "section",
-        title: "Step 5: Register the Application as a Service Provider",
-        body: "Go to Console → Applications → Add Application, choose Standard-Based Application → OIDC, and configure:",
+        title: "Step 4: Register the Application as a Service Provider",
+        body: "Go to Console → Applications → Add Application, choose Application Type → OIDC, and configure:",
       },
       {
         type: "table",
         headers: ["Setting", "Value"],
         rows: [
-          ["Callback URL", "https://your-app.com/oidc/callback"],
+          ["Redirect URL(s)", "https://your-app.com/oidc/callback"],
           ["Logout URL", "https://your-app.com/oidc/logout"],
-          ["Grant Type", "Authorization Code"],
           ["PKCE", "Enable (recommended)"],
         ],
       },
       {
         type: "body",
-        text: `Under Claim Configuration, select "Use Local Claim Dialect" and add all required claims, marking them as requested/mandatory:`,
+        text: `Under User Attributes, Select scopes that are allowed to be shared with this application e.g., 'ffsp_claims' and add all required claims, marking them as requested/mandatory:`,
       },
       {
         type: "table",
@@ -112,17 +112,17 @@ export const articles = [
         type: "callout",
         variant: "warning",
         title: "Commonly Missed Step",
-        body: "Even if the claim exists and has a value, WSO2 won't include it in the userinfo response unless it's explicitly requested in the Service Provider claim configuration.",
+        body: "Even if the claim exists and has a value, WSO2 won't include it in the userinfo response unless it's explicitly requested in the Service Provider User Attribute configuration.",
       },
       {
         type: "section",
-        title: "Step 6: Add the Adaptive Authentication Script",
-        body: "In the Service Provider, go to Local & Outbound Authentication → Script-Based Adaptive Authentication and add:",
+        title: "Step 5: Add the Conditional Authentication Script",
+        body: "In the Service Provider, go to Login Flow → Enable Conditional Authentication and add:",
       },
       {
         type: "code",
         language: "javascript",
-        label: "Adaptive Auth Script",
+        label: "Conditional Authentication Script",
         code: `var onLoginRequest = function(context) {
     executeStep(1, {
         onSuccess: function(context) {
@@ -278,10 +278,9 @@ if (hasRole(user, 'Internal/FFSP_Admin'))`,
         title: "Debugging Checklist",
         items: [
           "Local claim exists at http://wso2.org/claims/isAdmin",
-          "OIDC external claim mapping exists pointing to the local claim",
           "Claim is added to the custom OIDC scope (ffsp_claims)",
           "Claim is added to the Service Provider's Claim Configuration and marked as Requested",
-          "Adaptive script is enabled in the Service Provider's authentication config",
+          "Conditional script is enabled in the Service Provider's authentication config",
           "hasRole() uses the correct prefixed role name (e.g., Internal/FFSP_Admin)",
           "The scope ffsp_claims is included in the authorization request from the frontend",
           "Test by calling the userinfo endpoint directly with Postman to isolate WSO2 vs app issues",
