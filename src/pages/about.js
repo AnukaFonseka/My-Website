@@ -26,7 +26,7 @@ export default function About() {
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
-          <div className="grid w-[75%] mx-auto lg:w-[90%] md:w-full px-4 grid-cols-2 gap-16 sm:gap-8 md:grid-cols-1">
+          <div className="grid px-4 grid-cols-2 gap-16 sm:gap-8 md:grid-cols-1">
             {/* Biography Section - 2/3 width */}
             <div className="col-span-1 flex flex-col items-start justify-start md:order-2">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75 tracking-wider">
