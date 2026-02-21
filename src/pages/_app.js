@@ -22,7 +22,9 @@ export default function App({ Component, pageProps }) {
       <main
         className={`${montserrat.variable} font-mont  bg-light dark:bg-dark w-full min-h-screen h-full`}
       >
-        <Navbar />
+        <div className="sticky top-0 z-50">
+          <Navbar />
+        </div>
         <AnimatePresence initial={false} mode="wait">
           <Component key={router.asPath} {...pageProps} />
         </AnimatePresence>

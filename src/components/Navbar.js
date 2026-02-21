@@ -70,8 +70,9 @@ const Navbar = () => {
 
 
   return (
-    <header className="w-full flex items-center justify-between px-32 py-8 font-medium z-10 dark:text-light
-    lg:px-16 relative z-1 md:px-12 sm:px-8
+    <>
+    <header className="w-full flex items-center justify-between px-32 py-8 font-medium z-10 dark:text-light backdrop-blur-md
+    lg:px-16 relative z-1 md:px-12 sm:px-8 
     ">
       
       <button
@@ -131,6 +132,8 @@ const Navbar = () => {
         <CustomLink className="mr-4" href="/" title="Home" />
         <CustomLink className="mx-4" href="/about" title="About" />
         <CustomLink className="mx-4" href="/projects" title="Projects" />
+        <CustomLink className="mx-4" href="/articles" title="Articles" />
+        <CustomLink className="mx-4" href="/contact" title="Contact" />
         {/* <CustomLink className="ml-4" href="/articles" title="Articles" /> */}
       </nav>
       <nav
@@ -203,6 +206,12 @@ const Navbar = () => {
         </button>
       </nav>
       </div>
+    
+
+      <div className="absolute left-[50%] top-2 translate-x-[-50%] ">
+        <Logo />
+      </div>
+    </header>
     {
       isOpen ? 
 
@@ -217,17 +226,15 @@ const Navbar = () => {
         <CustomMobileLink toggle={handleClick} className="mr-4 lg:m-0 lg:my-2" href="/" title="Home" />
         <CustomMobileLink toggle={handleClick} className="mx-4 lg:m-0 lg:my-2" href="/about" title="About" />
         <CustomMobileLink toggle={handleClick} className="mx-4 lg:m-0 lg:my-2" href="/projects" title="Projects" />
+        <CustomMobileLink toggle={handleClick} className="mx-4 lg:m-0 lg:my-2" href="/contact" title="Contact" />
+        <CustomMobileLink toggle={handleClick} className="mx-4 lg:m-0 lg:my-2" href="/articles" title="Articles" />
         {/* <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/articles" title="Articles" /> */}
       </nav>
       </motion.div>
 
       : null
     }
-
-      <div className="absolute left-[50%] top-2 translate-x-[-50%] ">
-        <Logo />
-      </div>
-    </header>
+    </>
   );
 };
 
