@@ -26,14 +26,14 @@ export default function About() {
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
-          <div className="grid px-4 grid-cols-2 gap-16 sm:gap-8 md:grid-cols-1">
+          <div className="grid px-4 w-[75%] mx-auto lg:w-[90%] md:w-full">
             {/* Biography Section - 2/3 width */}
-            <div className="col-span-1 flex flex-col items-start justify-start md:order-2">
+            <div className="flex flex-col items-start justify-start">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75 tracking-wider">
                 Biography
               </h2>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-justify">
                 <p className="font-medium text-dark/90 dark:text-light/90 leading-relaxed">
                   Hello, I&apos;m <span className="text-primary dark:text-primaryDark font-semibold">Anuka Fonseka</span>, 
                   a Software Engineer specializing in building enterprise grade web applications and scalable 
@@ -99,7 +99,7 @@ export default function About() {
             </div>
 
             {/* Profile Image Section - 1/3 width, no frame or effects */}
-            <div className="col-span-1 h-full md:order-1 flex items-center justify-center">
+            {/* <div className="col-span-1 h-full md:order-1 flex items-center justify-center">
               <Image
                 className="h-auto w-full rounded-2xl"
                 src={profile}
@@ -107,7 +107,7 @@ export default function About() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
               />
-            </div>
+            </div> */}
           </div>
 
           <Skills />

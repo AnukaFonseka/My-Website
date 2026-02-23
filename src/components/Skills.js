@@ -64,7 +64,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="mt-64 mb-32 md:mt-32 md:mb-16">
+    <div className="mt-32 mb-32 md:mt-32 md:mb-16">
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
